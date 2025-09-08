@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/08 12:28:28 by amyrodri         ###   ########.fr       */
+/*   Created: 2025/07/15 10:39:01 by amyrodri          #+#    #+#             */
+/*   Updated: 2025/07/24 10:18:29 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	write_erro(char *str)
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	while (*str)
-		write(2, str++, 1);
-	return (1);
-}
+	size_t	i;
 
-int	main(int num, char **args)
-{
-	if (!check_args(num, args))
-		return (write_erro("Error\n"));
-	ft_putstr("boa");
-	write(1, "\n", 1);
+	i = 0;
+	while (i < n && (str1[i] || str2[i]))
+	{
+		if ((unsigned char)str1[i] != (unsigned char)str2[i])
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
+		i++;
+	}
 	return (0);
 }

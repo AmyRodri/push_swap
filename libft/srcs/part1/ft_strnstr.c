@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/08 12:28:28 by amyrodri         ###   ########.fr       */
+/*   Created: 2025/07/15 13:56:22 by amyrodri          #+#    #+#             */
+/*   Updated: 2025/07/28 17:34:45 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	write_erro(char *str)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	while (*str)
-		write(2, str++, 1);
-	return (1);
-}
+	size_t	i;
+	size_t	j;
 
-int	main(int num, char **args)
-{
-	if (!check_args(num, args))
-		return (write_erro("Error\n"));
-	ft_putstr("boa");
-	write(1, "\n", 1);
-	return (0);
+	if (!*little)
+		return ((char *)big);
+	i = -1;
+	while (big[++i] && i < len)
+	{
+		j = 0;
+		while (little[j] && (i + j) < len && big[j + i] == little[j])
+			j++;
+		if (!little[j])
+			return ((char *)(big + i));
+	}
+	return (NULL);
 }

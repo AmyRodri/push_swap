@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/08 12:28:28 by amyrodri         ###   ########.fr       */
+/*   Created: 2025/07/16 12:05:18 by amyrodri          #+#    #+#             */
+/*   Updated: 2025/07/24 16:45:49 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	write_erro(char *str)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	while (*str)
-		write(2, str++, 1);
-	return (1);
-}
+	void	*ar;
 
-int	main(int num, char **args)
-{
-	if (!check_args(num, args))
-		return (write_erro("Error\n"));
-	ft_putstr("boa");
-	write(1, "\n", 1);
-	return (0);
+	if (!nmemb || !size)
+		return (malloc(1));
+	if (nmemb && size > (size_t)-1 / nmemb)
+		return (NULL);
+	ar = malloc(nmemb * size);
+	if (!ar)
+		return (NULL);
+	ft_bzero(ar, nmemb * size);
+	return (ar);
 }

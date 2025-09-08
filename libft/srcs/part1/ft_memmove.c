@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/08 12:28:28 by amyrodri         ###   ########.fr       */
+/*   Created: 2025/07/14 16:22:29 by amyrodri          #+#    #+#             */
+/*   Updated: 2025/07/24 14:04:40 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	write_erro(char *str)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	while (*str)
-		write(2, str++, 1);
-	return (1);
-}
+	const unsigned char	*s;
+	unsigned char		*d;
+	size_t				i;
 
-int	main(int num, char **args)
-{
-	if (!check_args(num, args))
-		return (write_erro("Error\n"));
-	ft_putstr("boa");
-	write(1, "\n", 1);
-	return (0);
+	if (!dest && !src && n > 0)
+		return (NULL);
+	s = (const unsigned char *)src;
+	d = (unsigned char *)dest;
+	i = -1;
+	if (d < s)
+	{
+		while (++i < n)
+			d[i] = s[i];
+	}
+	else
+	{
+		while (n--)
+			d[n] = s[n];
+	}
+	return (dest);
 }

@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/08 12:28:28 by amyrodri         ###   ########.fr       */
+/*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
+/*   Updated: 2025/09/08 12:13:57 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int	write_erro(char *str)
-{
-	while (*str)
-		write(2, str++, 1);
-	return (1);
-}
+# include "libft/srcs/includes/libft.h"
+# include <unistd.h>
 
-int	main(int num, char **args)
-{
-	if (!check_args(num, args))
-		return (write_erro("Error\n"));
-	ft_putstr("boa");
-	write(1, "\n", 1);
-	return (0);
-}
+int	check_one_arg(char *arg);
+int	check_args(int num, char **args);
+
+#endif

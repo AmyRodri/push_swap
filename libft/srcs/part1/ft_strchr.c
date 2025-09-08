@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/08 12:28:28 by amyrodri         ###   ########.fr       */
+/*   Created: 2025/07/14 18:13:10 by amyrodri          #+#    #+#             */
+/*   Updated: 2025/07/24 11:34:17 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	write_erro(char *str)
+char	*ft_strchr(const char *str, int c)
 {
-	while (*str)
-		write(2, str++, 1);
-	return (1);
-}
+	int				i;
+	unsigned char	*s;
 
-int	main(int num, char **args)
-{
-	if (!check_args(num, args))
-		return (write_erro("Error\n"));
-	ft_putstr("boa");
-	write(1, "\n", 1);
-	return (0);
+	s = (unsigned char *)str;
+	i = -1;
+	while (s[++i] || (char)c == '\0')
+	{
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+	}
+	return (NULL);
 }

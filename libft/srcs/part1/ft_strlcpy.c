@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/08 12:28:28 by amyrodri         ###   ########.fr       */
+/*   Created: 2025/07/14 16:31:58 by amyrodri          #+#    #+#             */
+/*   Updated: 2025/07/18 12:38:40 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	write_erro(char *str)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	while (*str)
-		write(2, str++, 1);
-	return (1);
-}
+	size_t	i;
 
-int	main(int num, char **args)
-{
-	if (!check_args(num, args))
-		return (write_erro("Error\n"));
-	ft_putstr("boa");
-	write(1, "\n", 1);
-	return (0);
+	i = -1;
+	if (size > 0)
+	{
+		while (src[++i] && i < size - 1)
+			dst[i] = src[i];
+		dst[i] = '\0';
+	}
+	return (ft_strlen(src));
 }

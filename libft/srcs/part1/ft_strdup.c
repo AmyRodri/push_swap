@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/08 12:28:28 by amyrodri         ###   ########.fr       */
+/*   Created: 2025/07/16 11:36:34 by amyrodri          #+#    #+#             */
+/*   Updated: 2025/07/16 12:03:47 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	write_erro(char *str)
+char	*ft_strdup(const char *s)
 {
-	while (*str)
-		write(2, str++, 1);
-	return (1);
-}
+	char	*copy;
+	int		len;
 
-int	main(int num, char **args)
-{
-	if (!check_args(num, args))
-		return (write_erro("Error\n"));
-	ft_putstr("boa");
-	write(1, "\n", 1);
-	return (0);
+	len = ft_strlen(s);
+	copy = (char *)malloc(len + 1 * sizeof(char));
+	if (copy == NULL)
+		return (NULL);
+	ft_memcpy(copy, s, len);
+	copy[len] = '\0';
+	return (copy);
 }
