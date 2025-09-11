@@ -6,13 +6,13 @@
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 11:17:07 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/08/24 12:00:48 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/11 18:02:13 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	new_line(const char *s)
+static int	new_line(const char *s)
 {
 	if (!s)
 		return (0);
@@ -25,7 +25,7 @@ int	new_line(const char *s)
 	return (0);
 }
 
-char	*extract_line_and_stash(char *line, char **stash)
+static char	*extract_line_and_stash(char *line, char **stash)
 {
 	char	*new_line;
 	int		i;
@@ -51,14 +51,14 @@ char	*extract_line_and_stash(char *line, char **stash)
 	return (new_line);
 }
 
-void	*free_null(char *buffer, char *line)
+static void	*free_null(char *buffer, char *line)
 {
 	free(buffer);
 	free(line);
 	return (NULL);
 }
 
-char	*read_line(char *line, int fd)
+static char	*read_line(char *line, int fd)
 {
 	int		bytes;
 	char	*buffer;

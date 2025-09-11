@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/11 18:09:52 by kamys            ###   ########.fr       */
+/*   Created: 2025/09/11 16:45:23 by kamys             #+#    #+#             */
+/*   Updated: 2025/09/11 18:09:56 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **args)
+void	free_splited(char **splited)
 {
-	int	*array;
+	int	i;
 
-	if (ac < 2)
-		return (write_erro("Error\n"));
-	array = parse_args(ac, args);
-	if (!array)
-		return (write_erro("Error\n"));
-	ft_putstr("boa");
-	write(1, "\n", 1);
-	return (0);
+	i = 0;
+	while (splited[i])
+		free(splited[i++]);
+	free(splited);
+}
+
+int	*free_array(int *array)
+{
+	free(array);
+	return (NULL);
+}
+
+int	write_erro(char *str)
+{
+	while (*str)
+		write(2, str++, 1);
+	return (1);
 }

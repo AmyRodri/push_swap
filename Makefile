@@ -8,7 +8,8 @@ RM = rm -f
 RUNLIB = -C libft
 
 SRCS = main.c \
-		checks.c \
+		parse.c \
+		utils.c \
 		ft_atol.c 
 
 OBJS = $(SRCS:.c=.o)
