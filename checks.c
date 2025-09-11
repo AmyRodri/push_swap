@@ -3,36 +3,68 @@
 /*                                                        :::      ::::::::   */
 /*   checks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 12:19:04 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/08 12:23:28 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/11 12:52:00 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	valid_number(const char *str)
+{
+	int	i;
 
-// ver se é apenas digito 9 - 0. ver se tem número repedido
-// e ir de INT_MIN até INT_MAX
+	if (!str || !*str)
+		return (0);
+	if (*str == '-' || *str == '+')
+		i = 1;
+	else
+		i = 0;
+	if (!str[i])
+		return (0);
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i++]))
+			return (0);
+	}
+	return (1);
+}
+
+int	repeat_numbers(int i, long val_i, char **nums)
+{
+	long	val_j;
+	int		j;
+
+	j = i + 1;
+	while (nums[j])
+	{
+		val_j = ft_atol(nums[j]);
+		if (val_j == val_i)
+			return (1);
+		j++;
+	}
+	return (0);
+}
 
 int	check_one_arg(char *arg)
 {
+	char	**nums;
 	int		i;
-	int		j;
+	long	val_i;
 
+	nums = ft_split(arg, ' ');
 	i = 0;
-	while (arg[i])
+	while (nums[i])
 	{
-		if (!ft_isdigit(arg[i]) && arg[i] != ' ')
+		if (!valid_number(nums[i]))
 			return (1);
-		j = i + 1;
-		while (arg[j])
-		{
-			if (arg[j] == arg[i])
-				return (1);
-			j++;
-		}
+		val_i = ft_atol(nums[i]);
+		if ((val_i > 2147483647 || val_i < -2147483648))
+			return (1);
+		if (repeat_numbers(i, val_i, nums))
+			return (1);
 		i++;
 	}
 	return (0);
@@ -42,7 +74,6 @@ int	check_one_arg(char *arg)
 // {
 // 	int	i;
 
-	
 // }
 
 int	check_args(int num, char **args)

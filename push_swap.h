@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/08 12:13:57 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/11 12:02:50 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@
 # include "libft/srcs/includes/libft.h"
 # include <unistd.h>
 
-int	check_one_arg(char *arg);
-int	check_args(int num, char **args);
+long	ft_atol(const char *str);
+
+int		check_one_arg(char *arg);
+int		check_args(int num, char **args);
+
 
 #endif

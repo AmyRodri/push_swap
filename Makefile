@@ -7,7 +7,9 @@ INCLUDE = -I libft/srcs/includes
 RM = rm -f
 RUNLIB = -C libft
 
-SRCS = main.c checks.c
+SRCS = main.c \
+		checks.c \
+		ft_atol.c 
 
 OBJS = $(SRCS:.c=.o)
 
