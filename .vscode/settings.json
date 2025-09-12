@@ -1,5 +1,21 @@
 {
 	"files.associations": {
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"array": "c",
+		"bitset": "c",
+		"string_view": "c",
+		"initializer_list": "c",
+		"span": "c",
+		"format": "c",
+		"__hash_table": "c",
+		"__split_buffer": "c",
+		"deque": "c",
+		"iterator": "c",
+		"queue": "c",
+		"random": "c",
+		"string": "c",
+		"unordered_map": "c",
+		"utility": "c",
+		"vector": "c"
 	}
 }

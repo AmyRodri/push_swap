@@ -6,7 +6,7 @@
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 14:06:24 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/11 18:08:52 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/12 13:28:13 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	is_valid_numbers(char *str)
 	return (1);
 }
 
-static int	count_args(int ac, char **args)
+int	count_args(int ac, char **args)
 {
 	char	**splited;
 	int		count;
@@ -55,6 +55,7 @@ static int	count_args(int ac, char **args)
 	int		j;
 
 	i = 1;
+	count = 0;
 	while (i < ac)
 	{
 		splited = ft_split(args[i++], ' ');
@@ -63,13 +64,12 @@ static int	count_args(int ac, char **args)
 		j = 0;
 		while (splited[j])
 		{
-			if (!is_valid_numbers(splited[j]))
+			if (!is_valid_numbers(splited[j++]))
 			{
 				free_splited(splited);
 				return (-1);
 			}
 			count++;
-			j++;
 		}
 		free_splited(splited);
 	}
