@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/15 14:47:30 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/15 15:30:48 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,15 @@ void	ft_ss(t_list **stack_a, t_list **stack_b);
 void	ft_pb(t_list **stack_a, t_list **stack_b);
 void	ft_pa(t_list **stack_b, t_list **stack_a);
 
+// ft_rorate.c
 void	ft_ra(t_list **stack_a);
 void	ft_rb(t_list **stack_b);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
+
+// ft_reverse_rotate.c
+void	ft_rra(t_list **stack_a);
+void	ft_rrb(t_list **stack_b);
+void	ft_rrr(t_list **stack_a, t_list **stack_b);
 
 // main.c
 // main

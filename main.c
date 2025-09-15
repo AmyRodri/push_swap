@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/15 14:48:20 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/15 15:30:55 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	main(int ac, char **args)
 	ft_pb(&stack_a, &stack_b);
 	ft_pb(&stack_a, &stack_b);
 	ft_rr(&stack_a, &stack_b);
+	ft_rrr(&stack_a, &stack_b);
 	print_lst(stack_a);
 	print_lst(stack_b);
 	ft_lstclear(&stack_a, free);
