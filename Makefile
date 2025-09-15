@@ -11,6 +11,7 @@ SRCS = main.c \
 		parse.c \
 		utils.c \
 		lst.c \
+		ft_swap_a.c \
 		ft_atol.c 
 
 OBJS = $(SRCS:.c=.o)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/12 13:25:18 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/15 13:02:57 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	main(int ac, char **args)
 		free(array);
 		return (write_erro("Error\n"));
 	}
+	print_lst(stack_a);
+	stack_a = ft_sa(stack_a);
 	print_lst(stack_a);
 	ft_lstclear(&stack_a, free);
 	free(array);

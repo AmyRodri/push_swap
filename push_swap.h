@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/12 15:45:56 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/15 12:50:00 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int		write_erro(char *str);
 // lst.c
 t_list	*start_list(int ac, char **args, int *array);
 void	print_lst(t_list *head);
+
+t_list	*ft_sa(t_list *stack_a);
 
 // main.c
 // main
