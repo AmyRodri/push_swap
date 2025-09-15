@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/15 15:30:48 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/15 18:13:04 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		count_args(int ac, char **args);
 
 // utils.c
 void	free_splited(char **splited);
+void	cleanup_stacks(t_list **stack_a, t_list **stack_b);
+int		init_stack_a(int ac, char **args, t_list **stack_a);
 int		*free_array(int *array);
 int		write_erro(char *str);
 
