@@ -13,6 +13,7 @@ SRCS = main.c \
 		lst.c \
 		ft_swap.c \
 		ft_push.c \
+		ft_rotate.c \
 		ft_atol.c 
 
 OBJS = $(SRCS:.c=.o)

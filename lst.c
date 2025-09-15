@@ -6,13 +6,13 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 18:21:13 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/15 13:57:27 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/15 14:34:13 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	*new_node(int value)
+static t_list	*new_node(int value)
 {
 	int		*val;
 	t_list	*node;
