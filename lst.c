@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   lst.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 18:21:13 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/12 15:29:07 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/15 13:57:27 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_list	*new_node(int value)
+t_list	*new_node(int value)
 {
 	int		*val;
 	t_list	*node;
