@@ -15,7 +15,8 @@ SRCS = main.c \
 		ft_push.c \
 		ft_rotate.c \
 		ft_reverse_rotate.c \
-		ft_stack_sort.c \
+		ft_sort.c \
+		ft_sort_2.c \
 		ft_atol.c 
 
 OBJS = $(SRCS:.c=.o)

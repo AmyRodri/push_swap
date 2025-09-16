@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_sort.c                                    :+:      :+:    :+:   */
+/*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 12:28:39 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/16 16:26:44 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/16 16:35:19 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	sort_three(t_list **stack)
+void	sort_three(t_list **stack)
 {
 	int	first;
 	int	segund;
@@ -87,6 +87,6 @@ void	sort_stack(t_list **stack_a, t_list **stack_b)
 		sort_three(stack_a);
 	else if (size <= 5)
 		sort_five(stack_a, stack_b);
-	// else
-	// 	big_sort(stack_a, stack_b);
+	else
+		big_sort(stack_a, stack_b);
 }
