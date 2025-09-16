@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 18:21:13 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/15 14:34:13 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/16 14:20:01 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,11 @@ t_list	*start_list(int ac, char **args, int *array)
 		i++;
 	}
 	return (head);
+}
+
+int	val(t_list *stack)
+{
+	return (*((int *)stack->content));
 }
 
 void	print_lst(t_list *head)

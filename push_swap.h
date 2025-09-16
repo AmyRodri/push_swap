@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/16 13:12:58 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/16 14:20:43 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		write_erro(char *str);
 // lst.c
 t_list	*start_list(int ac, char **args, int *array);
 void	print_lst(t_list *head);
+int		val(t_list *stack);
 
 // ft_swap.c
 void	ft_sb(t_list **stack);
@@ -54,7 +55,7 @@ void	ft_rrb(t_list **stack_b);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 
 // ft_stack_sort.c
-void	sort_stack(t_list **stack_a);
+void	sort_stack(t_list **stack_a, t_list **stack_b);
 
 // main.c
 // main
