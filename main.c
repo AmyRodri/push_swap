@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/15 18:13:13 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/16 13:16:23 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,10 @@ int	main(int ac, char **args)
 	if (!init_stack_a(ac, args, &stack_a))
 		return (write_erro("Error\n"));
 	print_lst(stack_a);
-	ft_pb(&stack_a, &stack_b);
-	ft_pb(&stack_a, &stack_b);
-	ft_pa(&stack_b, &stack_a);
-	ft_ss(&stack_a, &stack_b);
-	ft_rr(&stack_a, &stack_b);
-	ft_rrr(&stack_a, &stack_b);
+	write(1, "\n", 1);
+	sort_stack(&stack_a);
+	write(1, "\n", 1);
 	print_lst(stack_a);
-	print_lst(stack_b);
 	cleanup_stacks(&stack_a, &stack_b);
 	return (0);
 }
