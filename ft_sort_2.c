@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 16:30:42 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/17 16:15:31 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/18 11:58:58 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	get_cheapest(t_cost *costs, int size_b)
 		return (-1);
 	min_cost = costs[0].total_cost;
 	min_index = 0;
-	i = 0;
+	i = 1;
 	while (i < size_b)
 	{
 		if (costs[i].total_cost < min_cost)
@@ -33,6 +33,28 @@ static int	get_cheapest(t_cost *costs, int size_b)
 		i++;
 	}
 	return (min_index);
+}
+
+static void	min_to_top(t_list **stack_a)
+{
+	int		min;
+	t_list	*tmp;
+
+	min = 2147483647;
+	tmp = *stack_a;
+	while (tmp)
+	{
+		if (min > val(tmp))
+			min = val(tmp);
+		tmp = tmp->next;
+	}
+	while (val(*stack_a) != min)
+	{
+		if (min < (ft_lstsize(*stack_a) / 2))
+			ft_ra(stack_a);
+		else
+			ft_rra(stack_a);
+	}
 }
 
 static void	move_to_a(t_list **stack_a, t_list **stack_b, t_cost c)
@@ -95,5 +117,5 @@ void	big_sort(t_list **stack_a, t_list **stack_b)
 		ft_pa(stack_b, stack_a);
 		free(costs);
 	}
-	// min_to_top(stack_a);
+	min_to_top(stack_a);
 }

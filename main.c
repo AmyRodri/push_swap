@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/16 14:03:00 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/18 13:11:37 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,7 @@ int	main(int ac, char **args)
 	stack_b = NULL;
 	if (!init_stack_a(ac, args, &stack_a))
 		return (write_erro("Error\n"));
-	print_lst(stack_a);
-	write(1, "\n", 1);
 	sort_stack(&stack_a, &stack_b);
-	write(1, "\n", 1);
-	print_lst(stack_a);
 	cleanup_stacks(&stack_a, &stack_b);
 	return (0);
 }

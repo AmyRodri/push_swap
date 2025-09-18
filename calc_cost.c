@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calc_cost.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 15:20:13 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/17 16:16:56 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/18 11:27:44 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,42 @@
 
 static int	get_target_pos(int value, t_list *stack_a)
 {
-	int	pos;
-	int	best_pos;
-	int	best_val;
+	int		pos;
+	int		best_pos;
+	int		best_val;
+	t_list	*tmp;
 
+	tmp = stack_a;
 	best_pos = 0;
 	best_val = 2147483647;
 	pos = 0;
-	while (stack_a)
+	while (tmp)
 	{
-		if (value > val(stack_a) && val(stack_a) < best_val)
+		if (val(tmp) > value && val(tmp) < best_val)
 		{
-			best_val = val(stack_a);
+			best_val = val(tmp);
 			best_pos = pos;
 		}
-		stack_a = stack_a->next;
+		tmp = tmp->next;
 		pos++;
 	}
-	if (best_pos != 2147483647)
-		return (best_pos);
-	return (0);
+	if (best_val == 2147483647)
+	{
+		pos = 0;
+		best_val = 2147483647;
+		tmp = stack_a;
+		while (tmp)
+		{
+			if (val(tmp) < best_val)
+			{
+				best_val = val(tmp);
+				best_pos = pos;
+			}
+			tmp = tmp->next;
+			pos++;
+		}
+	}
+	return (best_pos);
 }
 
 t_cost	*calc_cost(t_list **stack_a, t_list **stack_b)
@@ -70,9 +86,11 @@ t_cost	*calc_cost(t_list **stack_a, t_list **stack_b)
 			if (ft_abs(costs[i].cost_a) > ft_abs(costs[i].cost_b))
 				costs[i].total_cost = ft_abs(costs[i].cost_a);
 			else
-				costs[i].total_cost = ft_abs(costs[i].cost_b)
-					+ ft_abs(costs[i].cost_b);
+				costs[i].total_cost = ft_abs(costs[i].cost_b);
 		}
+		else
+			costs[i].total_cost = ft_abs(costs[i].cost_a)
+				+ ft_abs(costs[i].cost_b);
 		stack_tmp = stack_tmp->next;
 		i++;
 	}
