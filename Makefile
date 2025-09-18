@@ -10,6 +10,7 @@ RUNLIB = -C libft
 SRCS = main.c \
 		parse.c \
 		utils.c \
+		utils2.c \
 		lst.c \
 		ft_swap.c \
 		ft_push.c \
@@ -17,6 +18,7 @@ SRCS = main.c \
 		ft_reverse_rotate.c \
 		ft_sort.c \
 		ft_sort_2.c \
+		calc_cost.c \
 		ft_atol.c 
 
 OBJS = $(SRCS:.c=.o)
