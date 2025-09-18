@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:45:23 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/15 18:12:50 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/18 13:25:52 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	cleanup_stacks(t_list **stack_a, t_list **stack_b)
 {
 	ft_lstclear(stack_b, free);
 	ft_lstclear(stack_a, free);
-	write(1, "\n", 1);
 }
 
 int	init_stack_a(int ac, char **args, t_list **stack_a)
