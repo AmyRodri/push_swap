@@ -21,7 +21,8 @@ SRCS = main.c \
 		calc_cost.c \
 		ft_atol.c 
 
-OBJS = $(SRCS:.c=.o)
+OBJDIR = objs
+OBJS = $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
 
 LIBFT = libft/libft.a
 
@@ -30,14 +31,19 @@ all: $(NAME)
 $(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) $(LIBFT) -o $(NAME)
 
-%.o: %.c
+# regra para compilar .c em .o dentro de objs/
+$(OBJDIR)/%.o: %.c | $(OBJDIR)
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
+# cria a pasta objs se não existir
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
 
 $(LIBFT):
 	$(MAKE) $(RUNLIB)
 
 clean:
-	$(RM) $(OBJS) $(OBJSBONUS)
+	$(RM) -r $(OBJDIR)
 	$(MAKE) clean $(RUNLIB)
 
 fclean: clean

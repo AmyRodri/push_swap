@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 12:28:39 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/16 16:35:19 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/19 11:21:42 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,28 @@ void	sort_three(t_list **stack)
 	first = val(*stack);
 	segund = val((*stack)->next);
 	three = val((*stack)->next->next);
-	if ((first > segund) && (first > three))
-		ft_ra(stack);
-	else if ((segund > first) && (segund > three))
-		ft_rra(stack);
-	first = *((int *)(*stack)->content);
-	segund = *((int *)(*stack)->next->content);
-	if (first > segund)
+	if ((first > segund) && (segund < three) && (first < three))
 		ft_sa(stack);
+	else if ((first > segund) && (segund > three))
+	{
+		ft_sa(stack);
+		ft_rra(stack);
+	}
+	else if ((first > segund) && (segund < three) && (first > three))
+		ft_ra(stack);
+	else if ((first < segund) && (segund > three) && (first < three))
+	{
+		ft_sa(stack);
+		ft_ra(stack);
+	}
+	else if ((first < segund) && (segund > three) && (first > three))
+		ft_rra(stack);
 }
 
 static void	sort_two(t_list **stack)
 {
 	if (ft_lstsize(*stack) == 2 && val(*stack) < val((*stack)->next))
-		ft_sa(stack);
+		ft_sb(stack);
 }
 
 static void	select_two_minus(t_list *stack, int *min1, int *min2)
