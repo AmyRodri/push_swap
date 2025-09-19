@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 15:20:13 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/18 11:27:44 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/19 17:36:53 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ t_cost	*calc_cost(t_list **stack_a, t_list **stack_b)
 		else
 			costs[i].cost_b = -(size_b - i);
 		target_pos = get_target_pos(costs[i].value, *stack_a);
-		if (target_pos < (size_a / 2))
+		if (target_pos <= (size_a / 2))
 			costs[i].cost_a = target_pos;
 		else
 			costs[i].cost_a = -(size_a - target_pos);
@@ -96,3 +96,6 @@ t_cost	*calc_cost(t_list **stack_a, t_list **stack_b)
 	}
 	return (costs);
 }
+
+
+
