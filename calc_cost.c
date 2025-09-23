@@ -6,13 +6,13 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 15:20:13 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/19 17:36:53 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/23 18:07:57 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_target_pos(int value, t_list *stack_a)
+int	get_target_pos(int value, t_list *stack_a)
 {
 	int		pos;
 	int		best_pos;
@@ -74,12 +74,12 @@ t_cost	*calc_cost(t_list **stack_a, t_list **stack_b)
 		if (i <= (size_b / 2))
 			costs[i].cost_b = i;
 		else
-			costs[i].cost_b = -(size_b - i);
+			costs[i].cost_b = i - size_b;
 		target_pos = get_target_pos(costs[i].value, *stack_a);
 		if (target_pos <= (size_a / 2))
 			costs[i].cost_a = target_pos;
 		else
-			costs[i].cost_a = -(size_a - target_pos);
+			costs[i].cost_a = target_pos - size_a;
 		if ((costs[i].cost_a >= 0 && costs[i].cost_b >= 0)
 			|| (costs[i].cost_a < 0 && costs[i].cost_b < 0))
 		{

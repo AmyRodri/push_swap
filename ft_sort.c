@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 12:28:39 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/19 11:21:42 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/23 15:55:16 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,11 @@ void	sort_stack(t_list **stack_a, t_list **stack_b)
 	int	size;
 
 	size = ft_lstsize(*stack_a);
-	if (size <= 3)
+	if (size == 2 && val(*stack_a) > val((*stack_a)->next))
+		ft_sa(stack_a);
+	else if (size == 3)
 		sort_three(stack_a);
-	else if (size <= 5)
+	else if (size == 5)
 		sort_five(stack_a, stack_b);
 	else
 		big_sort(stack_a, stack_b);

@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 16:45:23 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/18 13:25:52 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/23 18:13:40 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,13 @@ int	init_stack_a(int ac, char **args, t_list **stack_a)
 	int	*array;
 
 	if (ac < 2)
-		return (1);
+		return (0);
 	array = parse_args(ac, args);
 	if (!array)
-		return (1);
-	*stack_a = start_list(ac, args, array);
-	if (!*stack_a)
-	{
-		free(array);
 		return (0);
-	}
+	*stack_a = start_list(ac, args, array);
 	free(array);
+	if (!*stack_a)
+		return (0);
 	return (1);
 }

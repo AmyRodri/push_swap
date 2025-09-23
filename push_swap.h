@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/17 15:21:44 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/23 18:08:10 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void	big_sort(t_list **stack_a, t_list **stack_b);
 
 // calc_cost.c
 t_cost	*calc_cost(t_list **stack_a, t_list **stack_b);
+int	get_target_pos(int value, t_list *stack_a);
 
 // main.c
 // main
