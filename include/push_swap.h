@@ -6,14 +6,14 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/24 14:46:55 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/24 15:07:31 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/srcs/includes/libft.h"
+# include "../libft/srcs/includes/libft.h"
 # include <unistd.h>
 
 typedef struct s_cost

@@ -2,7 +2,7 @@ NAME = push_swap
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-INCLUDE = -I libft/srcs/includes 
+INCLUDE = -I libft/srcs/includes -I include
 
 RM = rm -f
 RUNLIB = -C libft
@@ -22,8 +22,11 @@ SRCS = main.c \
 		calc_utils.c \
 		ft_atol.c 
 
+SRCSDIR = srcs
+SRCS := $(addprefix $(SRCSDIR)/, $(SRCS))
+
 OBJDIR = objs
-OBJS = $(addprefix $(OBJDIR)/,$(SRCS:.c=.o))
+OBJS = $(addprefix $(OBJDIR)/, $(notdir $(SRCS:.c=.o)))
 
 LIBFT = libft/libft.a
 
@@ -33,7 +36,7 @@ $(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) $(LIBFT) -o $(NAME)
 
 # regra para compilar .c em .o dentro de objs/
-$(OBJDIR)/%.o: %.c | $(OBJDIR)
+$(OBJDIR)/%.o: $(SRCSDIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 # cria a pasta objs se não existir
