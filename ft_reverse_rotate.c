@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 14:53:45 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/15 15:30:21 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/24 14:14:49 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_rrb(t_list **stack_b)
 	end = head->next;
 	head->next = NULL;
 	ft_lstadd_front(stack_b, end);
-	ft_putstr("rra\n");
+	ft_putstr("rrb\n");
 }
 
 void	ft_rrr(t_list **stack_a, t_list **stack_b)

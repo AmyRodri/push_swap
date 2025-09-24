@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 16:30:42 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/23 18:11:57 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/24 14:16:34 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,26 +76,26 @@ static void	move_to_a(t_list **stack_a, t_list **stack_b, t_cost c)
 		c.cost_a--;
 		c.cost_b--;
 	}
+	while (c.cost_a > 0)
+	{
+		ft_ra(stack_a);
+		c.cost_a--;
+	}
+	while (c.cost_b > 0)
+	{
+		ft_rb(stack_b);
+		c.cost_b--;
+	}
 	while (c.cost_a < 0 && c.cost_b < 0)
 	{
 		ft_rrr(stack_a, stack_b);
 		c.cost_a++;
 		c.cost_b++;
 	}
-	while (c.cost_a > 0)
-	{
-		ft_ra(stack_a);
-		c.cost_a--;
-	}
 	while (c.cost_a < 0)
 	{
 		ft_rra(stack_a);
 		c.cost_a++;
-	}
-	while (c.cost_b > 0)
-	{
-		ft_rb(stack_b);
-		c.cost_b--;
 	}
 	while (c.cost_b < 0)
 	{
@@ -126,47 +126,3 @@ void	big_sort(t_list **stack_a, t_list **stack_b)
 	}
 	min_to_top(stack_a);
 }
-
-// void	big_sort(t_list **stack_a, t_list **stack_b)
-// {
-// 	t_cost	*costs;
-// 	t_cost	c;
-// 	int		index;
-
-// 	while (ft_lstsize(*stack_a) > 3)
-// 	{
-// 		ft_pb(stack_a, stack_b);
-// 		print_lst(*stack_a);
-// 		print_lst(*stack_b);
-// 	}
-// 	sort_three(stack_a);
-// 	while (*stack_b)
-// 	{
-// 		costs = calc_cost(stack_a, stack_b);
-// 		if (!costs)
-// 			return ;
-		
-// 		int i = 0;
-// 		while (i < ft_lstsize(*stack_b))
-// 		{
-// 			printf("VAL:%d cost_a:%d cost_b:%d total:%d target:%d\n",
-// 				costs[i].value, costs[i].cost_a, costs[i].cost_b,
-// 				costs[i].total_cost, get_target_pos(costs[i].value, *stack_a));
-// 			i++;
-// 		}
-		
-// 		index = get_cheapest(costs, ft_lstsize(*stack_b));
-// 		c = costs[index];
-		
-// 		printf("\nMovendo VAL: %d\n", c.value);
-// 		move_to_a(stack_a, stack_b, c);
-// 		ft_pa(stack_b, stack_a);
-		
-// 		print_lst(*stack_a);
-// 		print_lst(*stack_b);
-// 		free(costs);
-// 	}
-// 	min_to_top(stack_a);
-// 	print_lst(*stack_a);
-// 	print_lst(*stack_b);
-// }

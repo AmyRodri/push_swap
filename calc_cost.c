@@ -6,13 +6,20 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 15:20:13 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/23 18:07:57 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/24 14:13:25 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_target_pos(int value, t_list *stack_a)
+// int	ft_max(int a, int b)
+// {
+// 	if (a > b)
+// 		return (a);
+// 	return (b);
+// }
+
+static int	get_target_pos(int value, t_list *stack_a)
 {
 	int		pos;
 	int		best_pos;
@@ -36,7 +43,6 @@ int	get_target_pos(int value, t_list *stack_a)
 	if (best_val == 2147483647)
 	{
 		pos = 0;
-		best_val = 2147483647;
 		tmp = stack_a;
 		while (tmp)
 		{
@@ -45,8 +51,8 @@ int	get_target_pos(int value, t_list *stack_a)
 				best_val = val(tmp);
 				best_pos = pos;
 			}
-			tmp = tmp->next;
 			pos++;
+			tmp = tmp->next;
 		}
 	}
 	return (best_pos);
@@ -74,12 +80,12 @@ t_cost	*calc_cost(t_list **stack_a, t_list **stack_b)
 		if (i <= (size_b / 2))
 			costs[i].cost_b = i;
 		else
-			costs[i].cost_b = i - size_b;
+			costs[i].cost_b = -(size_b - i);
 		target_pos = get_target_pos(costs[i].value, *stack_a);
 		if (target_pos <= (size_a / 2))
 			costs[i].cost_a = target_pos;
 		else
-			costs[i].cost_a = target_pos - size_a;
+			costs[i].cost_a = -(size_a - target_pos);
 		if ((costs[i].cost_a >= 0 && costs[i].cost_b >= 0)
 			|| (costs[i].cost_a < 0 && costs[i].cost_b < 0))
 		{
