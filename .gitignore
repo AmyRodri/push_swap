@@ -1,0 +1,18 @@
+# instructions
+instructions.txt
+
+# OBJS
+objs/
+
+# OBJS_LIBFT
+libft/srcs/bonus/*.o
+libft/srcs/gnl/*.o
+libft/srcs/part1/*.o
+libft/srcs/part2/*.o
+libft/srcs/printf/*.o
+
+# static library
+libft/libft.a
+
+# EXEC push_swap
+push_swap
