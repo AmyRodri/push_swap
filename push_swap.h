@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/23 18:08:10 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/24 14:46:55 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_cost
 	int	total_cost;
 	int	value;
 }	t_cost;
-
 
 // ft_atol.c
 long	ft_atol(const char *str);
@@ -75,7 +74,9 @@ void	big_sort(t_list **stack_a, t_list **stack_b);
 
 // calc_cost.c
 t_cost	*calc_cost(t_list **stack_a, t_list **stack_b);
-int	get_target_pos(int value, t_list *stack_a);
+
+// calc_utils.c
+void	find_min(t_list *stack_a, int *best_pos);
 
 // main.c
 // main

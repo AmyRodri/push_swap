@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 16:30:42 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/24 14:16:34 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/24 14:54:58 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,38 +37,20 @@ static int	get_cheapest(t_cost *costs, int size_b)
 
 static void	min_to_top(t_list **stack_a)
 {
-	int		min_pos;
-	int		min;
-	int		pos;
-	t_list	*tmp;
+	int	min_pos;
+	int	size_a;
 
-	min = 2147483647;
-	tmp = *stack_a;
-	min_pos = 0;
-	pos = 0;
-	while (tmp)
-	{
-		if (min > val(tmp))
-		{
-			min = val(tmp);
-			min_pos = pos;
-		}
-		pos++;
-		tmp = tmp->next;
-	}
-	if (min_pos <= (ft_lstsize(*stack_a) / 2))
-	{
-		while (val(*stack_a) != min)
+	size_a = ft_lstsize(*stack_a);
+	find_min(*stack_a, &min_pos);
+	if (min_pos <= (size_a / 2))
+		while (min_pos-- > 0)
 			ft_ra(stack_a);
-	}
 	else
-	{
-		while (val(*stack_a) != min)
+		while (min_pos++ < size_a)
 			ft_rra(stack_a);
-	}
 }
 
-static void	move_to_a(t_list **stack_a, t_list **stack_b, t_cost c)
+static void	move_to_a_up(t_list **stack_a, t_list **stack_b, t_cost c)
 {
 	while (c.cost_a > 0 && c.cost_b > 0)
 	{
@@ -86,6 +68,10 @@ static void	move_to_a(t_list **stack_a, t_list **stack_b, t_cost c)
 		ft_rb(stack_b);
 		c.cost_b--;
 	}
+}
+
+static void	move_to_a_down(t_list **stack_a, t_list **stack_b, t_cost c)
+{
 	while (c.cost_a < 0 && c.cost_b < 0)
 	{
 		ft_rrr(stack_a, stack_b);
@@ -120,7 +106,8 @@ void	big_sort(t_list **stack_a, t_list **stack_b)
 			return ;
 		index = get_cheapest(costs, ft_lstsize(*stack_b));
 		c = costs[index];
-		move_to_a(stack_a, stack_b, c);
+		move_to_a_up(stack_a, stack_b, c);
+		move_to_a_down(stack_a, stack_b, c);
 		ft_pa(stack_b, stack_a);
 		free(costs);
 	}

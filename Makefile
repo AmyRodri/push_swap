@@ -19,6 +19,7 @@ SRCS = main.c \
 		ft_sort.c \
 		ft_sort_2.c \
 		calc_cost.c \
+		calc_utils.c \
 		ft_atol.c 
 
 OBJDIR = objs
