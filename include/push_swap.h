@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/24 15:07:31 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/26 03:21:56 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ typedef struct s_cost
 	int	value;
 }	t_cost;
 
-// ft_atol.c
-long	ft_atol(const char *str);
-
 // parse.c
 int		*parse_args(int ac, char **args);
 int		count_args(int ac, char **args);
@@ -40,11 +37,13 @@ int		write_erro(char *str);
 
 // utils2.c
 int		ft_abs(int x);
+long	ft_atol(const char *str);
+void	find_min(t_list *stack_a, int *best_pos);
+int		val(t_list *stack);
 
 // lst.c
 t_list	*start_list(int ac, char **args, int *array);
 void	print_lst(t_list *head);
-int		val(t_list *stack);
 
 // ft_swap.c
 void	ft_sb(t_list **stack);
@@ -74,9 +73,6 @@ void	big_sort(t_list **stack_a, t_list **stack_b);
 
 // calc_cost.c
 t_cost	*calc_cost(t_list **stack_a, t_list **stack_b);
-
-// calc_utils.c
-void	find_min(t_list *stack_a, int *best_pos);
 
 // main.c
 // main

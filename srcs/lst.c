@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 18:21:13 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/19 19:36:46 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/26 03:20:13 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,4 @@ t_list	*start_list(int ac, char **args, int *array)
 		i++;
 	}
 	return (head);
-}
-
-int	val(t_list *stack)
-{
-	return (*((int *)stack->content));
-}
-
-void	print_lst(t_list *head)
-{
-	while (head)
-	{
-		ft_printf("%d -> ", *(int *)head->content);
-		head = head->next;
-	}
-	ft_printf("NULL\n");
 }

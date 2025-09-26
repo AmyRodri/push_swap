@@ -18,9 +18,7 @@ SRCS = main.c \
 		ft_reverse_rotate.c \
 		ft_sort.c \
 		ft_sort_2.c \
-		calc_cost.c \
-		calc_utils.c \
-		ft_atol.c 
+		calc_cost.c 
 
 SRCSDIR = srcs
 SRCS := $(addprefix $(SRCSDIR)/, $(SRCS))
