@@ -6,7 +6,7 @@
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/26 03:21:56 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/26 03:32:35 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int		ft_abs(int x);
 long	ft_atol(const char *str);
 void	find_min(t_list *stack_a, int *best_pos);
 int		val(t_list *stack);
+int		check_list(t_list *stack_a);
 
 // lst.c
 t_list	*start_list(int ac, char **args, int *array);

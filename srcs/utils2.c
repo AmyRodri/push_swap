@@ -6,7 +6,7 @@
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 15:08:23 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/26 03:20:35 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/26 03:31:58 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,15 @@ void	find_min(t_list *stack_a, int *best_pos)
 		pos++;
 		tmp = tmp->next;
 	}
+}
+
+int	check_list(t_list *stack_a)
+{
+	while (stack_a && stack_a->next)
+	{
+		if (val(stack_a) > val(stack_a->next))
+			return (1);
+		stack_a = stack_a->next;
+	}
+	return (0);
 }

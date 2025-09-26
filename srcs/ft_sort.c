@@ -6,7 +6,7 @@
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 12:28:39 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/25 21:24:35 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/26 03:34:02 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ void	sort_stack(t_list **stack_a, t_list **stack_b)
 {
 	int	size;
 
+	if (!check_list(*stack_a))
+		return ;
 	size = ft_lstsize(*stack_a);
 	if (size == 2 && val(*stack_a) > val((*stack_a)->next))
 		ft_sa(stack_a);
