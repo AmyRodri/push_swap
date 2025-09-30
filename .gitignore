@@ -16,3 +16,6 @@ libft/libft.a
 
 # EXEC push_swap
 push_swap
+
+# EXEC checker
+checker
