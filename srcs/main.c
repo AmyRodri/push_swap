@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/24 14:03:04 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/30 17:25:57 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int ac, char **args)
 
 	stack_a = NULL;
 	stack_b = NULL;
+	if (ac < 2)
+		return (0);
 	if (!init_stack_a(ac, args, &stack_a))
 		return (write_erro("Error\n"));
 	sort_stack(&stack_a, &stack_b);

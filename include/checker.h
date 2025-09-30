@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/30 03:18:22 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 17:27:07 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,11 @@ int		check_list(t_list *stack_a);
 // lst.c
 t_list	*start_list(int ac, char **args, int *array);
 
+// cath_the_moves.c
 int		cath_the_moves(char ***moves);
 
+// make_moves.c
 void	make_moves(char **moves, t_list **stack_a, t_list **stack_b);
-
-int	check_lists(t_list **stack_a, t_list **stack_b);
 
 // ft_swap.c
 void	ft_sb(t_list **stack_a, t_list **stack_b);

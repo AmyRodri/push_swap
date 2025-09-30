@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/16 16:30:42 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/30 03:07:42 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 17:26:17 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static void	move_to_a_down(t_list **stack_a, t_list **stack_b, t_cost c)
 	}
 	while (c.cost_b < 0)
 	{
-		ft_rrb(stack_a ,stack_b);
+		ft_rrb(stack_a, stack_b);
 		c.cost_b++;
 	}
 }
