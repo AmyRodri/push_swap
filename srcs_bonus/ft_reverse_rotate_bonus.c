@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reverse_rotate.c                                :+:      :+:    :+:   */
+/*   ft_reverse_rotate_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 14:53:45 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/30 02:50:59 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 15:35:23 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_rra(t_list **stack_a, t_list **stack_b)
 	end = head->next;
 	head->next = NULL;
 	ft_lstadd_front(stack_a, end);
-	ft_putstr("rra\n");
 }
 
 void	ft_rrb(t_list **stack_a, t_list **stack_b)
@@ -43,7 +42,6 @@ void	ft_rrb(t_list **stack_a, t_list **stack_b)
 	end = head->next;
 	head->next = NULL;
 	ft_lstadd_front(stack_b, end);
-	ft_putstr("rrb\n");
 }
 
 void	ft_rrr(t_list **stack_a, t_list **stack_b)
@@ -67,5 +65,4 @@ void	ft_rrr(t_list **stack_a, t_list **stack_b)
 	end = head->next;
 	head->next = NULL;
 	ft_lstadd_front(stack_a, end);
-	ft_putstr("rrr\n");
 }

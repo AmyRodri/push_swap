@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 13:08:49 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/30 02:57:21 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 15:29:30 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_pb(t_list **stack_a, t_list **stack_b)
 	head = *stack_a;
 	*stack_a = (*stack_a)->next;
 	ft_lstadd_front(stack_b, head);
-	ft_putstr("pb\n");
 }
 
 void	ft_pa(t_list **stack_a, t_list **stack_b)
@@ -33,5 +32,4 @@ void	ft_pa(t_list **stack_a, t_list **stack_b)
 	head = *stack_b;
 	*stack_b = (*stack_b)->next;
 	ft_lstadd_front(stack_a, head);
-	ft_putstr("pa\n");
 }

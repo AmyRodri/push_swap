@@ -29,16 +29,16 @@ SRCS = main.c \
 
 # Fontes bônus
 SRCS_BONUS = checker.c \
-             parse.c \
-             utils.c \
-             utils2.c \
-             lst.c \
-             ft_swap.c \
-             ft_push.c \
-             ft_rotate.c \
-             ft_reverse_rotate.c \
-             make_moves.c \
-			 cath_the_moves.c
+             parse_bonus.c \
+             utils_bonus.c \
+             utils2_bonus.c \
+             lst_bonus.c \
+             ft_swap_bonus.c \
+             ft_push_bonus.c \
+             ft_rotate_bonus.c \
+             ft_reverse_rotate_bonus.c \
+             make_moves_bonus.c \
+			 cath_the_moves_bonus.c
 
 # Adiciona prefixo do diretório
 SRCS        := $(addprefix $(SRCSDIR)/, $(SRCS))

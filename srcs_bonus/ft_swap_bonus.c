@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 12:28:08 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/30 02:49:31 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 15:31:58 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_sa(t_list **stack_a, t_list **stack_b)
 	first->next = segund->next;
 	segund->next = first;
 	*stack_a = segund;
-	ft_putstr("sa\n");
 }
 
 void	ft_sb(t_list **stack_a, t_list **stack_b)
@@ -41,7 +40,6 @@ void	ft_sb(t_list **stack_a, t_list **stack_b)
 	first->next = segund->next;
 	segund->next = first;
 	*stack_b = segund;
-	ft_putstr("sb\n");
 }
 
 void	ft_ss(t_list **stack_a, t_list **stack_b)
@@ -63,5 +61,4 @@ void	ft_ss(t_list **stack_a, t_list **stack_b)
 	first->next = segund->next;
 	segund->next = first;
 	*stack_b = segund;
-	ft_putstr("ss\n");
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cath_the_moves.c                                   :+:      :+:    :+:   */
+/*   cath_the_moves_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 23:45:10 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/30 03:34:36 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 15:35:54 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ static void	line_moves(char *line, char **tmp)
 	free(*tmp);
 	free(line);
 	*tmp = new_tmp;
+	new_tmp = ft_strjoin(*tmp, " ");
+	free(*tmp);
+	*tmp = new_tmp;
 }
 
 int	cath_the_moves(char ***moves)
@@ -52,7 +55,6 @@ int	cath_the_moves(char ***moves)
 	tmp = NULL;
 	while (1)
 	{
-		ft_putstr("> ");
 		line = get_next_line(STDIN_FILENO);
 		if (!line)
 			break ;
@@ -64,10 +66,9 @@ int	cath_the_moves(char ***moves)
 		}
 		line_moves(line, &tmp);
 	}
-	ft_putstr("\033[2K");
 	if (!tmp)
 		return (0);
-	*moves = ft_split(tmp, '\n');
+	*moves = ft_split(tmp, ' ');
 	free(tmp);
 	return (1);
 }

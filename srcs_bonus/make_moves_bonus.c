@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   make_moves.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
+/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 01:59:01 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/30 02:42:56 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 15:28:11 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include <string.h>
 
 static void	init_table(t_move table[])
 {
@@ -30,20 +31,20 @@ static void	init_table(t_move table[])
 
 void	make_moves(char **moves, t_list **stack_a, t_list **stack_b)
 {
-	t_move	m_table[12];
+	t_move	table[12];
 	int		i;
 	int		j;
 
-	init_table(m_table);
+	init_table(table);
 	i = 0;
 	while (moves[i])
 	{
 		j = 0;
-		while (m_table[j].name)
+		while (table[j].name)
 		{
-			if (ft_strncmp(moves[i], m_table[j].name, ft_strlen(moves[i])) == 0)
+			if (strcmp(moves[i], table[j].name) == 0)
 			{
-				m_table[j].func(stack_a, stack_b);
+				table[j].func(stack_a, stack_b);
 				break ;
 			}
 			j++;
