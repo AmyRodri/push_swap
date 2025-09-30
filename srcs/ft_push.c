@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_b.c                                        :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 13:08:49 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/15 14:28:01 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/30 02:56:51 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	ft_pb(t_list **stack_a, t_list **stack_b)
 {
@@ -24,7 +24,7 @@ void	ft_pb(t_list **stack_a, t_list **stack_b)
 	ft_putstr("pb\n");
 }
 
-void	ft_pa(t_list **stack_b, t_list **stack_a)
+void	ft_pa(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*head;
 

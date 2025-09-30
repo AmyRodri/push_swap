@@ -37,6 +37,7 @@ SRCS_BONUS = checker.c \
              ft_push.c \
              ft_rotate.c \
              ft_reverse_rotate.c \
+             make_moves.c \
 			 cath_the_moves.c
 
 # Adiciona prefixo do diretório

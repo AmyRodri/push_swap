@@ -6,7 +6,7 @@
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 13:08:49 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/29 23:29:56 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 02:57:21 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_pb(t_list **stack_a, t_list **stack_b)
 	ft_putstr("pb\n");
 }
 
-void	ft_pa(t_list **stack_b, t_list **stack_a)
+void	ft_pa(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*head;
 

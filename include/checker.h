@@ -6,7 +6,7 @@
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/30 00:44:30 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 02:59:22 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ typedef struct s_cost
 	int	total_cost;
 	int	value;
 }	t_cost;
+
+typedef void	(*t_move_func)(t_list **, t_list **);
+
+typedef struct s_move
+{
+	char		*name;
+	t_move_func	func;
+}	t_move;
 
 // parse.c
 int		*parse_args(int ac, char **args);
@@ -47,23 +55,25 @@ t_list	*start_list(int ac, char **args, int *array);
 
 int		cath_the_moves(char ***moves);
 
+void	make_moves(char **moves, t_list **stack_a, t_list **stack_b);
+
 // ft_swap.c
-void	ft_sb(t_list **stack);
-void	ft_sa(t_list **stack);
+void	ft_sb(t_list **stack_a, t_list **stack_b);
+void	ft_sa(t_list **stack_a, t_list **stack_b);
 void	ft_ss(t_list **stack_a, t_list **stack_b);
 
 // ft_push.c
 void	ft_pb(t_list **stack_a, t_list **stack_b);
-void	ft_pa(t_list **stack_b, t_list **stack_a);
+void	ft_pa(t_list **stack_a, t_list **stack_b);
 
 // ft_rorate.c
-void	ft_ra(t_list **stack_a);
-void	ft_rb(t_list **stack_b);
+void	ft_ra(t_list **stack_a, t_list **stack_b);
+void	ft_rb(t_list **stack_a, t_list **stack_b);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
 
 // ft_reverse_rotate.c
-void	ft_rra(t_list **stack_a);
-void	ft_rrb(t_list **stack_b);
+void	ft_rra(t_list **stack_a, t_list **stack_b);
+void	ft_rrb(t_list **stack_a, t_list **stack_b);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 
 // main.c

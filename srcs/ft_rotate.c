@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 14:33:17 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/15 14:47:20 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/30 02:57:40 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	ft_ra(t_list **stack_a)
+void	ft_ra(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*head;
 
+	(void)stack_b;
 	if (!*stack_a)
 		return ;
 	head = *stack_a;
@@ -25,10 +26,11 @@ void	ft_ra(t_list **stack_a)
 	ft_putstr("ra\n");
 }
 
-void	ft_rb(t_list **stack_b)
+void	ft_rb(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*head;
 
+	(void)stack_a;
 	if (!*stack_b)
 		return ;
 	head = *stack_b;

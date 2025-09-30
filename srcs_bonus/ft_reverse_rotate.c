@@ -6,17 +6,18 @@
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 14:53:45 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/29 23:30:12 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 02:50:59 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	ft_rra(t_list **stack_a)
+void	ft_rra(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*head;
 	t_list	*end;
 
+	(void)stack_b;
 	if (!*stack_a || !(*stack_a)->next)
 		return ;
 	head = *stack_a;
@@ -28,11 +29,12 @@ void	ft_rra(t_list **stack_a)
 	ft_putstr("rra\n");
 }
 
-void	ft_rrb(t_list **stack_b)
+void	ft_rrb(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*head;
 	t_list	*end;
 
+	(void)stack_a;
 	if (!*stack_b || !(*stack_b)->next)
 		return ;
 	head = *stack_b;

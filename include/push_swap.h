@@ -6,7 +6,7 @@
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/29 23:19:08 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 03:05:28 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,27 +46,27 @@ int		check_list(t_list *stack_a);
 t_list	*start_list(int ac, char **args, int *array);
 
 // ft_swap.c
-void	ft_sb(t_list **stack);
-void	ft_sa(t_list **stack);
+void	ft_sb(t_list **stack_a, t_list **stack_b);
+void	ft_sa(t_list **stack_a, t_list **stack_b);
 void	ft_ss(t_list **stack_a, t_list **stack_b);
 
 // ft_push.c
 void	ft_pb(t_list **stack_a, t_list **stack_b);
-void	ft_pa(t_list **stack_b, t_list **stack_a);
+void	ft_pa(t_list **stack_a, t_list **stack_b);
 
 // ft_rorate.c
-void	ft_ra(t_list **stack_a);
-void	ft_rb(t_list **stack_b);
+void	ft_ra(t_list **stack_a, t_list **stack_b);
+void	ft_rb(t_list **stack_a, t_list **stack_b);
 void	ft_rr(t_list **stack_a, t_list **stack_b);
 
 // ft_reverse_rotate.c
-void	ft_rra(t_list **stack_a);
-void	ft_rrb(t_list **stack_b);
+void	ft_rra(t_list **stack_a, t_list **stack_b);
+void	ft_rrb(t_list **stack_a, t_list **stack_b);
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 
 // ft_sort.c
 void	sort_stack(t_list **stack_a, t_list **stack_b);
-void	sort_three(t_list **stack);
+void	sort_three(t_list **stack_a, t_list **stack_b);
 
 // ft_sort_2.c
 void	big_sort(t_list **stack_a, t_list **stack_b);

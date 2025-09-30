@@ -6,7 +6,7 @@
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/30 01:43:36 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 02:00:20 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int ac, char **args)
 		return (write_erro("Error\n"));
 	if (!cath_the_moves(&moves))
 		return (write_erro("Error\n"));
-	// make_moves(moves, stack_a, stack_b);
+	make_moves(moves, &stack_a, &stack_b);
 	// if (!check_list(stack_a) && !check_list_b(stack_b))
 	// 	return (write_erro("KO"));
 	cleanup_stacks(&stack_a, &stack_b);
