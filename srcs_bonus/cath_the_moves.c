@@ -6,13 +6,12 @@
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 23:45:10 by kamys             #+#    #+#             */
-/*   Updated: 2025/09/30 01:47:47 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 03:34:36 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-// (sa, sb, ss, pa, pb, ra, rb, rr, rra, rrb, rrr)
 static int	is_valid_move(char *move)
 {
 	if (move[ft_strlen(move) - 1] == '\n')

@@ -6,7 +6,7 @@
 /*   By: kamys <kamys@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:47:24 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/30 02:59:22 by kamys            ###   ########.fr       */
+/*   Updated: 2025/09/30 03:18:22 by kamys            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ t_list	*start_list(int ac, char **args, int *array);
 int		cath_the_moves(char ***moves);
 
 void	make_moves(char **moves, t_list **stack_a, t_list **stack_b);
+
+int	check_lists(t_list **stack_a, t_list **stack_b);
 
 // ft_swap.c
 void	ft_sb(t_list **stack_a, t_list **stack_b);
