@@ -6,21 +6,11 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/30 17:24:59 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/09/30 17:32:36 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-// static void	print_list(t_list *stack)
-// {
-// 	while (stack)
-// 	{
-// 		ft_printf("%i -> ", val(stack));
-// 		stack = stack->next;
-// 	}
-// 	ft_printf("NULL\n");
-// }
 
 int	main(int ac, char **args)
 {
