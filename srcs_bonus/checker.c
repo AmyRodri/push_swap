@@ -6,7 +6,7 @@
 /*   By: amyrodri <amyrodri@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 11:46:03 by amyrodri          #+#    #+#             */
-/*   Updated: 2025/09/30 17:32:36 by amyrodri         ###   ########.fr       */
+/*   Updated: 2025/10/02 16:21:10 by amyrodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ int	main(int ac, char **args)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (ac < 2 || !check_list(stack_a))
+	if (ac < 2)
 		return (0);
 	if (!init_stack_a(ac, args, &stack_a))
 		return (write_erro("Error\n"));
+	if (!check_list(stack_a))
+		return (0);
 	if (!cath_the_moves(&moves))
 		return (write_erro("Error\n"));
 	make_moves(moves, &stack_a, &stack_b);
